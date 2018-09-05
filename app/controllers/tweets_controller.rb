@@ -19,7 +19,15 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
-    binding.pry
+    if logged_in?
+      if params[:content] == "" 
+        redirect "/tweets/new" 
+      else 
+        @user = User.find_by_id(session[:user_id]) 
+        @tweet = Tweet.create(:content => params[:content], :user_id => @user.id)
+        redirect to "/tweets/#{@tweet.id}"
+      end 
+    end 
   end
 
   get '/tweets/edit' do

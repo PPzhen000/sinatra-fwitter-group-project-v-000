@@ -14,5 +14,7 @@ class TweetsController < ApplicationController
 
   get '/tweets/edit' do
     erb :'/tweets/edit'
+  end 
+  
 
 end

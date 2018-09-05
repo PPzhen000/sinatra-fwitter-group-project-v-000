@@ -10,7 +10,12 @@ class TweetsController < ApplicationController
   end
 
   get '/tweets/new' do
-    erb :'/tweets/new'
+    if logged_in?
+      @user = current_user
+      erb :'/tweets/new'
+    else 
+      redirect '/login' 
+    end 
   end
 
   post '/tweets' do

@@ -4,12 +4,12 @@ class TweetsController < ApplicationController
     erb :'/tweets/index'
   end
 
-  get '/tweets/new' do 
-    erb :'/tweets/new' 
-  end 
+  get '/tweets/new' do
+    erb :'/tweets/new'
+  end
 
-  post '/tweets' do 
+  post '/tweets' do
 
-  end 
+  end
   
 end

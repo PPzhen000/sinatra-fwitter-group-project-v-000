@@ -40,8 +40,6 @@ class UsersController < ApplicationController
       if logged_in?
         session.clear
         redirect to '/login'
-      else
-        redirect to '/tweet'
       end
     end
 

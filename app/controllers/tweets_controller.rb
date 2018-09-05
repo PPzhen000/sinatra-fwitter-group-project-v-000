@@ -12,4 +12,7 @@ class TweetsController < ApplicationController
     binding.pry
   end
 
+  get '/tweets/edit' do
+    erb :'/tweets/edit'
+
 end

@@ -1,7 +1,10 @@
 class TweetsController < ApplicationController
 
   get '/tweets' do
-    erb :'/tweets/index'
+    if logged_in?
+      @user = current_user
+      erb :'/tweets/index'
+    end 
   end
 
   get '/tweets/new' do
@@ -16,5 +19,5 @@ class TweetsController < ApplicationController
     erb :'/tweets/edit'
   end
 
-  
+
 end
